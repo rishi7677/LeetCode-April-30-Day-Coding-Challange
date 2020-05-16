@@ -1,0 +1,15 @@
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        l=len(nums)
+        mx=0
+        i=0
+        while(i<=mx):
+            mx=max(mx,i+nums[i])
+            if(mx>=l-1):
+                return True
+            i+=1
+        return False
+        
+        
+        
+        
