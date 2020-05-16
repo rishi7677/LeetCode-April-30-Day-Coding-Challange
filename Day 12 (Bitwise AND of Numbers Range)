@@ -1,0 +1,14 @@
+import math
+class Solution:
+    def rangeBitwiseAnd(self, m: int, n: int) -> int:
+        if(m==0):
+            return 0
+        l=int(math.log2(m))
+        r=int(math.log2(n))
+        if(l!=r):
+            return 0
+        r=m
+        for i in range(m+1,n+1):
+            r=r&i
+        return r
+        
