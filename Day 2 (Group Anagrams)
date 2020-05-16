@@ -1,0 +1,37 @@
+class Solution:
+    def groupAnagrams(self, sts: List[str]) -> List[List[str]]:
+        ana={}
+        for s in sts:
+            sw="".join(sorted(s))
+            if(sw in ana):
+                ana[sw].append(s)
+            else:
+                ana[sw]=[s]
+        return (list(ana.values()))
+        
+        
+        '''st=[]
+        for i,s in enumerate(sts):
+            st.append([i,"".join(sorted(s))])
+        st.sort(key=lambda st:st[1]) 
+        l=[]
+        x=[]
+        for i in range(len(sts)-1):
+            if(st[i][1] != st[i+1][1]):
+                x.append(sts[st[i][0]])
+                l.append(x)
+                x=[]
+            else:
+                x.append(sts[st[i][0]])
+        l.append(x)
+        return(l)'''
+                
+                
+            
+            
+        
+        
+            
+            
+        
+        
