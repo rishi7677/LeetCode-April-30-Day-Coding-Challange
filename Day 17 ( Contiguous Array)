@@ -1,0 +1,36 @@
+class Solution:
+    def findMaxLength(self, nm: List[int]) -> int:
+    
+        '''z,o=nm.count(0),nm.count(1)
+        en=2*(min(z,o))
+        l=nm[:en]
+        ll=len(l)
+        while(ll>0):
+            l=nm[:en]
+            while(en<=len(nm)):
+                if(l.count(0)==l.count(1)):
+                    return(ll)
+                l.pop(0)
+                if(en<len(nm)):
+                    l.append(nm[en])
+                en+=1
+            ll-=2
+            en=ll
+        return(0)'''
+        
+        d={0:-1}
+        mx=0
+        c=0
+        for i in range(len(nm)):
+            if(nm[i]==1):
+                c+=1
+            else:
+                c-=1
+            if(c in d):
+                mx=max(mx,i-d[c])
+            else:
+                d[c]=i
+        return mx
+            
+            
+                
