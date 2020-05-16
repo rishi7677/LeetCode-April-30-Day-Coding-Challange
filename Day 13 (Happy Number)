@@ -1,0 +1,20 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        while(1):
+            if(n==1):
+                return (True)
+            n=self.smsq(n)
+            if(n==4):
+                return False
+        return False
+    def smsq(self,n):
+        sm=0
+        while(n):
+            sm+=(n%10)**2
+            n//=10
+        return sm
+            
+            
+            
+            
+        
